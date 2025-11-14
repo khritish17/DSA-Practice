@@ -7,14 +7,9 @@ n = int(sys.stdin.readline())
 
 MOD = 10**9 + 7
 base = 2
-expo = n
 ans = 1
-
-while expo:
-    if expo % 2 == 1: # equivalent to check the last set bit
-        ans = (ans * base) % MOD
-    base = (base * base) % MOD
-    expo //= 2
-print(ans) 
-
-
+while n:
+    ans = (ans * base**(n % 2)) % MOD
+    base = (base * base ) % MOD
+    n //= 2
+print(ans)
